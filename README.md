@@ -25,3 +25,6 @@ couche Repository : interaction avec les sources de données externes ;
 
 couche Model : implémentation des objets métiers qui seront manipulés par les autres couches.
 
+mvn -v
+
+mvn spring-boot:run
