@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bienvenue sur votre projet Spring Boot</h1>
+    <p>Cette page est servie par Thymeleaf dans un projet Spring Boot.</p>
+
+    <h2>Navigation :</h2>
+    <ul>
+        <li><a th:href="@{/employees}">Voir les employés</a></li>
+        <li><a th:href="@{/add-employee}">Ajouter un nouvel employé</a></li>
+    </ul>
+
+    <form method="post" th:action="@{/saveEmployee}" th:object="${employee}">
+        <input type="text" th:field="*{firstName}">
+        <input type="text" th:field="*{lastName}">
+        <input type="text" th:field="*{mail}">
+        <input type="password" th:field="*{password}">
+        <button type="submit" c>Créer</button>
+    </form>
+
+    <footer>
+        <p>&copy; 2024 Votre Application Spring Boot</p>
+    </footer>
+</body>
+
+</html>
